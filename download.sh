@@ -1,5 +1,7 @@
 name="name.tmp"
 album="album.tmp"
+echo "Installing id3v2, need permission."
+sudo apt-get install id3v2
 
 for i in $(seq 12555)
 do
@@ -17,9 +19,9 @@ do
    mkdir -p "Pretty/$alb"
 
    if [ ! -f "Pretty/$alb/$nam.mp3" ]; then
-      cp Songs/$i.mp3 "Pretty/$alb/$nam".mp3
+      mv Songs/$i.mp3 "Pretty/$alb/$nam".mp3
    else
-      cp Songs/$i.mp3 "Pretty/$alb/$i".mp3
+      mv Songs/$i.mp3 "Pretty/$alb/$i".mp3
    fi
 done
 
